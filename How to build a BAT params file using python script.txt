@@ -1,0 +1,8 @@
+right click on Desktop and select "Open in Terminal"
+
+run "python .\BAT_Params_Builder.py" after >
+
+Then you will know what to do~~
+
+
+After running, the code will save a .pro file in the Parameters folder
