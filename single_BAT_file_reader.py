@@ -1,3 +1,10 @@
+"""
+This code reads in data from the text file generated from Med-associates Davis Rig software, 
+and then saves it as a Pandas Dataframe.
+
+"""
+
+
 # import  Built-in Python libraries
 
 import os # functions for interacting w operating system
