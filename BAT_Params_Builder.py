@@ -26,7 +26,7 @@ def build_bottle_sequence(bottle_positions, num_blocks = None, block = False):
 
 # Open a file to save BAT Rig params
 # Gathering info from the experimenter
-subj_id = easygui.multenterbox(msg = 'What is the rat number?', fields = ['Rat ID'])
+# subj_id = easygui.multenterbox(msg = 'What is the rat number?', fields = ['Rat ID'])
 params_file_name = easygui.multenterbox(msg = 'Please provide file name?', 
                                         fields = ['File name (e.g., OR_HAB2)'])
 
