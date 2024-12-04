@@ -105,7 +105,7 @@ for dir_name in dirs:
                            value = etype)
 
             # clean the dataframe
-            # make column names all lower case
+            # make column names all lower case, and remove space/line characters
             col_names = [i.lower().strip() for i in lick_df.columns]
             lick_df.columns = col_names
             # drop useless columns
