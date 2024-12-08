@@ -7,6 +7,7 @@ import os
 import matplotlib.pyplot as plt
 import seaborn as sns
 from lick_analysis import LickAnalysis
+from util_tools import *
 
 # define functions to correct lick data
 def remove_short_lick(ITIs, ctn):
@@ -24,15 +25,23 @@ def ili_to_licktime(inter_lick_intervals=None):
     ilis = np.insert(inter_lick_intervals, 0, 0)
     return np.cumsum(ilis)
 
-# Ask the user for the BAT data files that need to be merged together 
-dirs = []
-while True:
-	dir_name = easygui.diropenbox(msg = 'Choose a directory with a hdf5 file, hit cancel to stop choosing')
-	try:
-		if len(dir_name) > 0:	
-			dirs.append(dir_name)
-	except:
-		break
+# Ask the user for the BAT data files that need to be merged together
+manual_add = False
+try:
+     dirs = easygui.multchoicebox(msg = 'Choose which folder(s) to be involved in analysis',
+                             choices = dirs)
+except:
+     print("No imported dirs, please add in manually")
+     manual_add = True
+if manual_add:  
+    dirs = []
+    while True:
+        dir_name = easygui.diropenbox(msg = 'Choose a directory with a hdf5 file, hit cancel to stop choosing')
+        try:
+            if len(dir_name) > 0:	
+                dirs.append(dir_name)
+        except:
+            break
 
 for dir_name in dirs:        
 	# Change to the directory
